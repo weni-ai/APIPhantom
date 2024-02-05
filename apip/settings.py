@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "apip.services",
     "apip.testplans",
+    "apip.testcases",
 ]
 
 MIDDLEWARE = [
