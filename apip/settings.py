@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "apip.services",
     "apip.testplans",
     "apip.testcases",
+    "django_ace",
 ]
 
 MIDDLEWARE = [
