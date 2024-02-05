@@ -125,4 +125,4 @@ STATIC_ROOT = "static"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+FAKER_CLASS = "application.fackers.CLIJSFFaker"

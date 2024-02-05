@@ -1,0 +1,14 @@
+{
+  "name": "facker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+  },
+  "author": "Sandro Meireles",
+  "license": "MIT",
+  "dependencies": {
+    "json-schema-faker": "^0.5.4",
+    "yargs": "^17.7.2"
+  }
+}
