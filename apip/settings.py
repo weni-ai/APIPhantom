@@ -51,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "apip.middlewares.subdomain_mock.SubdomainMockMiddleware",
 ]
 
 ROOT_URLCONF = "apip.urls"
