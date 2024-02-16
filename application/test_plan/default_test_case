@@ -1,0 +1,4 @@
+import jsonschema
+
+response = get_response("GET", endpoint="/v1/account/my-profile/")
+jsonschema.validate(response.json(), endpoint.schema)

@@ -1,0 +1,2 @@
+class TestCaseDoesNotExists(Exception):
+    pass
