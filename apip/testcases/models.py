@@ -18,7 +18,11 @@ class TestCase(models.Model):
     )
     code = models.TextField()
     authenticator = models.ForeignKey(
-        Authenticator, on_delete=models.CASCADE, null=True, default=None, related_name="test_cases"
+        Authenticator,
+        on_delete=models.CASCADE,
+        null=True,
+        default=None,
+        related_name="test_cases",
     )
 
     run_automatically = models.BooleanField(
