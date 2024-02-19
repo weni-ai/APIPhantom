@@ -237,6 +237,20 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-ace"
+version = "1.32.4"
+description = "django-ace provides integration for ajax.org ACE with Django"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-ace-1.32.4.tar.gz", hash = "sha256:d1bd881ed85acd261d4e996c41b44ea02168ca59991cb2229669688f91ba5fd1"},
+    {file = "django_ace-1.32.4-py3-none-any.whl", hash = "sha256:65c709dfdd2766b4080676541d3889762500a8c8a9150d4356285903b89b4d3a"},
+]
+
+[package.dependencies]
+Django = ">1.11"
+
+[[package]]
 name = "django-environ"
 version = "0.11.2"
 description = "A package that allows you to utilize 12factor inspired environment variables to configure your Django application."
@@ -665,4 +679,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "25c33c2c94fc5388dfabc2bc3c8bd7f7ebbd1fc14dc3e8c161d9d930e65384cc"
+content-hash = "4205002826b18e66629e83d01828b20a1f60aee03729f05dca715aa5af970477"

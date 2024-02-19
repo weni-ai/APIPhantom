@@ -14,6 +14,7 @@ schedule = "^1.2.1"
 gunicorn = "^21.2.0"
 django-environ = "^0.11.2"
 requests = "^2.31.0"
+django-ace = "^1.32.4"
 
 
 [tool.poetry.group.dev.dependencies]
