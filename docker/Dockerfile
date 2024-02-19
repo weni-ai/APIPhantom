@@ -11,10 +11,13 @@ ARG APP_GID=1000
 ARG PROJECT_PATH="/app"
 
 ARG RUNTIME_DEPS="\
+  python3-dev \
+  build-essential \
   tzdata \
   curl \
   npm \
   gettext \
+  libpq-dev \
   postgresql-client"
 
 ENV PYTHONDONTWRITEBYTECODE 1
