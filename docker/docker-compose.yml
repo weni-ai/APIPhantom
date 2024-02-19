@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  apiphantom:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8000:8000"
+
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=${POSTGRES_USER:-apiphantom}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-apiphantom}
+      - POSTGRES_DB=${POSTGRES_DB:-apiphantom}
