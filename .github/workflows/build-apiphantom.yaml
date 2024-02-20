@@ -1,0 +1,22 @@
+name: Build apiphantom (Push Tag)
+
+on:
+  push:
+    tags:
+      - '*.*.*-develop'
+      - '*.*.*-staging'
+      - '*.*.*'
+
+jobs:
+  call-workflow:
+    uses: weni-ai/actions-workflows/.github/workflows/reusable-workflow.yaml@main
+    with:
+      docker_image: ${{ secrets.REGISTRY_ECR }}/apiphantom
+      target_repository: weni-ai/kubernetes-manifests-platform
+      target_repository_branch: main
+      target_application: apiphantom
+      target_patch_file: deployment.json
+    secrets: 
+      REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+      REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+      DEVOPS_GITHUB_PERMANENT_TOKEN: ${{ secrets.DEVOPS_GITHUB_PERMANENT_TOKEN }}
