@@ -12,7 +12,7 @@ jobs:
     uses: weni-ai/actions-workflows/.github/workflows/reusable-workflow.yaml@main
     with:
       docker_image: ${{ secrets.REGISTRY_ECR }}/apiphantom
-      target_repository: weni-ai/kubernetes-manifests-flows
+      target_repository: weni-ai/kubernetes-manifests-platform
       target_repository_branch: main
       target_application: apiphantom
       target_patch_file: deployment.json
