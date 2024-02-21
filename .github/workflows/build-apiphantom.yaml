@@ -16,7 +16,5 @@ jobs:
       target_repository_branch: main
       target_application: apiphantom
       target_patch_file: deployment.json
-    secrets: 
-      REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
-      REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
-      DEVOPS_GITHUB_PERMANENT_TOKEN: ${{ secrets.DEVOPS_GITHUB_PERMANENT_TOKEN }}
+    secrets: inherit
+    
