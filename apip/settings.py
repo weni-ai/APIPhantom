@@ -135,4 +135,11 @@ REST_FRAMEWORK = {
     ],
 }
 
+# Health check settings
+
+HEALTH_CHECK_ENDPOINT = "health-check"
+
+
+# Mock settings
+
 FAKER_CLASS = "application.fackers.CLIJSFFaker"
