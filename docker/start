@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 export GUNICORN_APP=${GUNICORN_APP:-"apip.wsgi"}
 # export CELERY_APP=${CELERY_APP:-"apiphantom"}
