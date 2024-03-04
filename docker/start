@@ -67,6 +67,6 @@ if [[ "start" == "$1" ]]; then
 #     echo "${HEALTHCHECK_OUT}"
 #     grep -F -qs "${celery_queue}@${HOSTNAME}: OK" <<< "${HEALTHCHECK_OUT}" || exit 1
 #     exit 0
-# fi
+fi
 
 exec "$@"
