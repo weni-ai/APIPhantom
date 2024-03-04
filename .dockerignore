@@ -28,7 +28,8 @@ usr/
 node_modules
 **/node_modules
 node_modules
-docker/
+docker/Dockerfile
+docker/docker-compose.yml
 staticfiles/
 *.py[cod]
 settings.ini
