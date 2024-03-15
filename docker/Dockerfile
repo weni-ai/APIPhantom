@@ -41,7 +41,7 @@ ENV RUNTIME_DEPS=${RUNTIME_DEPS} \
   PYTHONUNBUFFERED=1 \
   PYTHONIOENCODING=UTF-8 \
   PIP_DISABLE_PIP_VERSION_CHECK=1 \
-  PATH="/install/bin:${PATH}" \
+  PATH="/opt/npm-globals/bin:/app/node_modules/.bin/:${PATH}:/install/bin" \
   APP_PORT=${APP_PORT}
 
 RUN addgroup --gid 1000 ${PROJECT_GROUP} \
