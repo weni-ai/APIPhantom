@@ -10,7 +10,6 @@ from apip.fackers import get_faker
 
 
 def is_health_check_endpoint(request: Request):
-    print(request.path)
     return bool(request.path == f"/{settings.HEALTH_CHECK_ENDPOINT}")
 
 
@@ -20,7 +19,6 @@ def get_request_subdomain(request: Request) -> str:
 
     host: str = request.get_host()
 
-    print(host)
     host_parts = request.get_host().split(".")
 
     if host.startswith("127.0.0.1"):
