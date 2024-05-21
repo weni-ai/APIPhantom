@@ -45,11 +45,13 @@ INSTALLED_APPS = [
     "apip.testplans",
     "apip.testcases",
     "django_ace",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -145,3 +147,9 @@ HEALTH_CHECK_ENDPOINT = "health-check"
 # Mock settings
 
 FAKER_CLASS = "application.fackers.CLIJSFFaker"
+
+
+# django-cors-headers Configurations
+
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default="")
+CORS_ALLOW_ALL_ORIGINS = env.str("CORS_ALLOW_ALL_ORIGINS", default=DEBUG)
