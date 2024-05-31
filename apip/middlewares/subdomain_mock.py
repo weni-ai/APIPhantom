@@ -48,6 +48,10 @@ class SubdomainMockMiddleware(object):
         try:
             service = Service.objects.get(name__icontains=subdomain)
             test_plan = service.plans.get(endpoint=path)
+
+            if test_plan.exact_value:
+                return JsonResponse(test_plan.schema, status=200)
+
             fake_data = get_faker().generate_data_by_schema(test_plan.schema)
             return JsonResponse(fake_data, status=200)
 
