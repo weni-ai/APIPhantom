@@ -60,7 +60,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apip.middlewares.subdomain_mock.SubdomainMockMiddleware",
-    "sentry_sdk.integrations.django.middleware.SentryMiddleware",
 ]
 
 ROOT_URLCONF = "apip.urls"
