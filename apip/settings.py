@@ -2,6 +2,8 @@ import os
 from pathlib import Path
 
 import environ
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apip.middlewares.subdomain_mock.SubdomainMockMiddleware",
+    "sentry_sdk.integrations.django.middleware.SentryMiddleware",
 ]
 
 ROOT_URLCONF = "apip.urls"
@@ -106,7 +109,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# SENTRY
+USE_SENTRY = env.bool("USE_SENTRY", default=False)
 
+if USE_SENTRY:
+    sentry_sdk.init(
+        dsn=env.str("SENTRY_DSN"),
+        integrations=[DjangoIntegration()],
+        environment=env.str("ENVIRONMENT", default="develop"),
+    )
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
