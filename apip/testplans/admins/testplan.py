@@ -21,9 +21,11 @@ class TestPlanAdmin(admin.ModelAdmin):
     list_display = (
         "endpoint",
         "service",
-        "test_passing",
-        "run_tests",
+        #"test_passing",
+        #"run_tests",
     )
+    list_filter = ["service"]
+    search_fields = ["endpoint", "service__name"]
     inlines = [TestCaseInline]
     form = TestPlanForm
 
