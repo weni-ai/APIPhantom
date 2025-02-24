@@ -48,7 +48,7 @@ COPY --chown=app_user:app_group . .
 RUN python -m pip install --no-cache-dir --upgrade pip \
   && python -m pip install --no-cache-dir -U poetry \
   && poetry config virtualenvs.create false \
-  && poetry install --no-dev \
+  && poetry install --without dev \
   && pip uninstall --yes poetry
 
 # Install node dependencies
