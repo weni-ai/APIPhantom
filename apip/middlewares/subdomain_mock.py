@@ -3,6 +3,7 @@ from django.http import Http404
 from rest_framework.request import Request
 from rest_framework.response import Response
 from django.http import JsonResponse
+from django.db.models import Q
 
 
 from apip.testplans.models import Service, TestPlan
@@ -47,7 +48,14 @@ class SubdomainMockMiddleware(object):
 
         try:
             service = Service.objects.get(name__icontains=subdomain)
-            test_plan = service.plans.get(endpoint=path)
+            
+            test_plan = service.plans.filter(
+                Q(endpoint=path) | 
+                Q(endpoint__startswith=f"{path}?")
+            ).first()
+            
+            if not test_plan:
+                raise TestPlan.DoesNotExist("TestPlan não encontrado para o caminho")
 
             if test_plan.exact_value:
                 return JsonResponse(test_plan.schema, status=200)
