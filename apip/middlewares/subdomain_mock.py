@@ -58,7 +58,7 @@ class SubdomainMockMiddleware(object):
                 raise TestPlan.DoesNotExist("TestPlan não encontrado para o caminho")
 
             if test_plan.exact_value:
-                return JsonResponse(test_plan.schema, status=200)
+                return JsonResponse(test_plan.schema, safe=False, status=200)
 
             fake_data = get_faker().generate_data_by_schema(test_plan.schema)
             return JsonResponse(fake_data, status=200)
